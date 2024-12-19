@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta charset="utf-8" />
+    <title>Page Title</title>
+</head>
+ 
+<body>
+ 
+    <h1>Wiederholungen</h1>
+    <form action="Potenzen-Rekursion.php" method="POST">
+        <p><input name="potenzen" type="number"></p>
+        <button type="submit">absenden</button>
+    </form>
+</body>
+ 
+</html>
+
+
+<?php
+
+$potenz;
+
+if(isset($_POST["potenzen"]))
+{
+    $potenz=$_POST["potenzen"];
+}
+
+function potenz($n){
+    if ($n > 1){
+        $result = 20 * (potenz($n - 1));
+    }
+    else {
+        $result = 20;
+    }
+    return $result;
+}
+
+$uebergabe = potenz($potenz);
+
+echo $uebergabe;
+
+?>
